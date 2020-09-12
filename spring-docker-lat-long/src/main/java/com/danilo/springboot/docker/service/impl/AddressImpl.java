@@ -18,6 +18,7 @@ import com.danilo.springboot.docker.service.Address;
 @Service
 public class AddressImpl implements Address
 {
+    
     private final URIBuilder uriBuilder = new URIBuilder();
     private final CloseableHttpClient httpclient = HttpClients.createDefault();
     
@@ -39,7 +40,7 @@ public class AddressImpl implements Address
         }
         catch (URISyntaxException | ParseException | IOException e)
         {
-            throw new LatLongException("Error during serach at OSM", e);
+            throw new LatLongException("Error during search at OSM", e);
         }
     }
 
