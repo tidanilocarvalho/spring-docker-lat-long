@@ -22,7 +22,7 @@ public class AddressImpl implements Address
     private final URIBuilder uriBuilder = new URIBuilder();
     private final CloseableHttpClient httpclient = HttpClients.createDefault();
     
-    public String getAddress(String city, String amenity) {
+    public String getAddress(String city, String state, String amenity) {
         try
         {
             URI uri = uriBuilder.setScheme("https")
@@ -31,6 +31,7 @@ public class AddressImpl implements Address
                 .setParameter("format", "json")
                 .setParameter("addressdetails", "1")
                 .setParameter("city", city)
+                .setParameter("state", state)
                 .setParameter("amenity", amenity)
                 .build();
             
